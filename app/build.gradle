@@ -25,6 +25,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        benchmark {
+            signingConfig signingConfigs.debug
+            matchingFallbacks = ['release']
+            debuggable false
+        }
     }
 
     compileOptions {
@@ -73,4 +78,7 @@ dependencies {
 
     // lifecycle
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+
+    // profile
+    implementation "androidx.profileinstaller:profileinstaller:1.3.0-alpha02"
 }
